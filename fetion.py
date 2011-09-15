@@ -9,7 +9,7 @@ url_logout = 'http://f.10086.cn//im/index/logoutsubmit.action?t='
 url_msg = 'http://f.10086.cn/im/user/sendMsgToMyselfs.action'
 user = 'Your Phone Number'
 password = 'Your Passwrdd'
-loginstatus = '4' #µÇÂ¼×´Ì¬,4±íÊ¾ÒþÉí
+loginstatus = '4' #ï¿½ï¿½Â¼×´Ì¬,4ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 arg_t = ''
 
 def fetion(msg):
@@ -21,9 +21,9 @@ def fetion(msg):
     req = urllib2.Request(url_login, urllib.urlencode(args))
     jump = opener.open(req)
     page = jump.read();
-    url = re.compile(r'<card id="start".*?ontimer="(.*?);').findall(page)[0]             #»ñÈ¡Ìø×ªÁ´½Ó
+    url = re.compile(r'<card id="start".*?ontimer="(.*?);').findall(page)[0]             #ï¿½ï¿½È¡ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½
     arg_t = re.compile(r't=(\d*)').findall(page)[0]
-    if url == '/im/login/login.action':                                                   #µÇÂ¼Ê§°Ü
+    if url == '/im/login/login.action':                                                   #ï¿½ï¿½Â¼Ê§ï¿½ï¿½
         print 'Login Failed!'
         raw_input('Press any key to exit.')
         return
@@ -37,8 +37,8 @@ def fetion(msg):
     else:
         print 'Send Successfully'
     logout = urllib2.Request(url_logout + arg_t)
-    response = urllib2.urlopen(logout)                                                    #×¢Ïú
-	print 'Logout Successfully!'
+    response = urllib2.urlopen(logout)                                                    #×¢ï¿½ï¿½
+    print 'Logout Successfully!'
 	#print response.read().decode('utf-8').encode('gbk')
 
 msg = raw_input('what do you want to say:')
